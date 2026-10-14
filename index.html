@@ -120,6 +120,7 @@ nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
 
 
 /* Video */
+.vcard--plain { background: var(--wine); border: var(--rule) solid var(--line-dark); }
 .vgrid { margin-top: var(--after-h2); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .vcard { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; text-decoration: none; color: var(--cream); }
 .vcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
@@ -215,7 +216,7 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
     <div>
       <h2 class="display h2">Обо мне</h2>
       <p>Меня зовут Луана Саратикян. Больше 5 лет я веду проекты выставок, конгрессов и форумов полного цикла: концепция, деловая программа, бюджет, подрядчики, застройка, работа на площадке и отчётность.</p>
-      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, топ-менеджментом компаний и иностранными делегациями. Английский — C1.</p>
+      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, топ-менеджментом компаний и иностранными делегациями.</p>
       <div class="label orgs-label">Организаторы и партнёры проектов</div>
       <div class="orgs"><span class="pill">Фонд Росконгресс</span><span class="pill">Минэнерго</span><span class="pill">Минтруд</span><span class="pill">Минэкономразвития</span></div>
     </div>
@@ -356,8 +357,8 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
     <h2 class="display h2">Видео</h2>
     <div class="vgrid">
       <a class="vcard" href="https://vkvideo.ru/video-59212293_456239201" target="_blank" rel="noopener"><img src="img/ren-plenary.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 01 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
-      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239155" target="_blank" rel="noopener"><img src="img/ren-expo.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 02 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
-      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239108" target="_blank" rel="noopener"><img src="img/ren-cameras.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 03 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
+      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239155" target="_blank" rel="noopener"><img src="img/kif-plenary.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 02 · VK Видео</span><b>Кавказский инвестиционный форум</b></span></a>
+      <a class="vcard vcard--plain" href="https://vkvideo.ru/video-59212293_456239108" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 03 · VK Видео</span><b>День энергетики — выставка «Россия»</b></span></a>
       <a class="vcard" href="https://vkvideo.ru/video-205832044_456239188" target="_blank" rel="noopener"><img src="img/labour-video.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 04 · VK Видео</span><b>Всероссийская неделя охраны труда</b></span></a>
     </div>
   </div>
@@ -366,7 +367,6 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
 <section class="band light steps" id="steps">
   <div class="wrap">
     <h2 class="display h2">Этапы работы</h2>
-    <p class="sub">Так выглядит полный цикл проекта, который я веду сама.</p>
     <div class="flow">
       <div><b>01</b><h5>Концепция</h5><p>Цели, аудитория, формат, визуальная концепция, деловая программа.</p></div>
       <div><b>02</b><h5>Роадмэп и бюджет</h5><p>Ключевые этапы и сроки, смета, риски, согласование со стейкхолдерами.</p></div>
@@ -399,7 +399,7 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
       <div><h5>Масштаб</h5><p>Вела проекты на 50 000 участников и 300 подрядчиков. Знаю, как не потерять контроль, когда всё происходит одновременно.</p></div>
       <div><h5>Выставочный формат</h5><p>Экспозиции, стенды и показы на площадках от Манежа до ВДНХ и «Сириуса».</p></div>
       <div><h5>Стейкхолдеры высокого уровня</h5><p>Министры, главы регионов, топ-менеджмент и иностранные делегации — привычная среда.</p></div>
-      <div><h5>Полный цикл</h5><p>От концепции и сметы до закрывающих документов. Английский C1 для международных проектов.</p></div>
+      <div><h5>Полный цикл</h5><p>От концепции и сметы до закрывающих документов.</p></div>
     </div>
   </div>
 </section>
