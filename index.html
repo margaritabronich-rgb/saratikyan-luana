@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Луана Саратикян — Event project manager</title>
+<meta name="description" content="Портфолио Луаны Саратикян: выставки, конгрессы и деловые мероприятия федерального и международного уровня.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one long scroll, wine and cream bands alternate; huge condensed Didone headings, photos carry the cases */
+:root {
+  --wine: #2b070b;
+  --wine-2: #3d0d13;
+  --cream: #f2e7e2;
+  --line-dark: rgba(242, 231, 226, .5);
+  --line-light: rgba(43, 7, 11, .4);
+  --display: "Oranienbaum", "Bodoni 72", "Didot", Georgia, serif;
+  --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 5vw, 96px);
+  /* type scale: one size per role */
+  --t-lead: clamp(17px, 1.4vw, 20px);
+  --t-body: 17px;
+  --t-small: 15px;
+  --t-label: 13px;
+  --t-h5: clamp(18px, 1.6vw, 22px);
+  --d-section: clamp(64px, 11vw, 190px);
+  --d-index: clamp(56px, 6vw, 96px);
+  --d-stat: clamp(44px, 5.2vw, 92px);
+  --d-stat-sm: clamp(32px, 3.4vw, 50px);
+  --muted: .7;
+  --after-h2: clamp(40px, 4.5vw, 64px);
+  --rule: 1.5px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--wine); color: var(--cream); font-family: var(--body); font-size: var(--t-body); line-height: 1.55; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.band { padding-inline: var(--gutter); padding-block: clamp(64px, 9vw, 130px); }
+.dark { background: var(--wine); color: var(--cream); }
+.dark-2 { background: var(--wine-2); color: var(--cream); }
+.light { background: var(--cream); color: var(--wine); }
+.wrap { max-width: 1400px; margin-inline: auto; }
+
+.display { font-family: var(--display); font-weight: 400; line-height: .85; text-transform: uppercase; text-wrap: balance; }
+.h2 { font-size: var(--d-section); }
+.muted { opacity: var(--muted); }
+.label { font-size: var(--t-label); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.pill { display: inline-block; border: var(--rule) solid currentColor; border-radius: 999px; padding: 7px 18px; font-size: var(--t-label); font-weight: 600; letter-spacing: .02em; text-decoration: none; white-space: nowrap; }
+a.pill:hover, a.pill:focus-visible { background: var(--cream); color: var(--wine); outline: none; }
+.light a.pill:hover, .light a.pill:focus-visible { background: var(--wine); color: var(--cream); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; padding-inline: var(--gutter); padding-block: 28px 56px; min-height: min(78vh, 780px); display: flex; flex-direction: column; }
+.hero-inner { position: relative; flex: 1; width: 100%; max-width: 1400px; margin-inline: auto; display: flex; flex-direction: column; }
+.hero .photo { position: absolute; inset: 0; background: url(img/ren-cameras.jpg) center/cover; filter: grayscale(1) contrast(1.15); }
+.hero .tint { position: absolute; inset: 0; background: var(--wine); mix-blend-mode: multiply; opacity: .9; }
+.hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,7,11,.6), rgba(43,7,11,0) 30%, rgba(43,7,11,.15) 60%, rgba(43,7,11,.95)); }
+.hero > *:not(.photo):not(.tint):not(.shade) { position: relative; }
+nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.hero-mid { margin-block: auto; padding-block: 48px 32px; }
+.hero h1 { font-size: clamp(76px, 19.5vw, 280px); text-align: center; line-height: .8; }
+.hero .row { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.hero .lead { max-width: 640px; font-size: var(--t-lead); }
+.hero .cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; background: var(--cream); color: var(--wine); border: var(--rule) solid var(--cream); border-radius: 999px; padding: 12px 26px; font-size: var(--t-body); font-weight: 700; line-height: 1.3; text-decoration: none; }
+.cta .pill { padding: 12px 26px; font-size: var(--t-body); letter-spacing: 0; font-weight: 700; line-height: 1.3; }
+.btn:hover, .btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 110px); align-items: center; }
+.frame { position: relative; padding: 14% 0 0 16%; }
+.frame::before { content: ""; position: absolute; left: 0; top: 0; width: 74%; height: 74%; background: var(--wine); }
+.frame img { position: relative; width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: center 20%; }
+.about .h2 { margin-bottom: var(--after-h2); }
+.about p { max-width: 62ch; font-size: var(--t-lead); }
+.about p + p { margin-top: 16px; }
+.orgs { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Numbers */
+.nums { margin-top: var(--after-h2); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: var(--rule) solid var(--line-dark); }
+.n { padding: 32px 28px 32px 0; border-bottom: var(--rule) solid var(--line-dark); }
+.n:not(:nth-child(3n+1)) { padding-left: 28px; border-left: var(--rule) solid var(--line-dark); }
+.n b { display: block; font-family: var(--display); font-weight: 400; font-size: var(--d-stat); line-height: .95; white-space: nowrap; }
+.n b small { font-size: .5em; margin-left: .2em; letter-spacing: .02em; }
+.n span { display: block; margin-top: 10px; font-size: var(--t-small); opacity: var(--muted); }
+
+/* Tasks */
+.tasks { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 100px); align-items: center; }
+.tasks .intro { margin-top: var(--after-h2); max-width: 46ch; font-size: var(--t-lead); }
+.list { border-top: var(--rule) solid var(--line-dark); }
+.list > div { padding: 20px 0; border-bottom: var(--rule) solid var(--line-dark); text-align: center; font-size: var(--t-lead); }
+
+/* Cases */
+.case { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.case + .case { margin-top: 0; }
+.pics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pics img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.pics .main { grid-column: 1 / 3; aspect-ratio: 16 / 10; }
+.cases-head { margin-bottom: var(--after-h2); }
+.case-num { font-size: var(--d-index); line-height: .8; opacity: .3; margin-bottom: 18px; }
+.meta { display: flex; flex-direction: column; gap: 4px; }
+.meta .year { font-size: var(--t-label); font-weight: 700; letter-spacing: .14em; }
+.meta .place { font-size: var(--t-small); opacity: var(--muted); }
+.case h3 { font-size: clamp(34px, 3.9vw, 66px); margin: 16px 0 26px; overflow-wrap: break-word; }
+.scale { display: grid; grid-template-columns: 1fr 1fr; border-top: var(--rule) solid var(--line-light); }
+.dark .scale, .dark .scale > div { border-color: var(--line-dark); }
+.scale > div { padding: 12px 0; border-bottom: var(--rule) solid var(--line-light); min-width: 0; }
+.scale > div:nth-child(even) { padding-left: 18px; }
+.scale b { display: block; font-family: var(--display); font-weight: 400; font-size: var(--d-stat-sm); line-height: 1; white-space: nowrap; }
+.scale span { font-size: var(--t-small); opacity: var(--muted); }
+.role { margin-top: 24px; }
+.role h4 { margin-bottom: 8px; opacity: var(--muted); }
+
+/* Video */
+.vgrid { margin-top: var(--after-h2); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.vcard { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; text-decoration: none; color: var(--cream); }
+.vcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.vcard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,7,11,.2), rgba(43,7,11,.92)); }
+.vcard .play { position: absolute; z-index: 1; top: 42%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border: var(--rule) solid var(--cream); border-radius: 50%; display: grid; place-items: center; }
+.vcard .play::before { content: ""; border-left: 22px solid var(--cream); border-top: 13px solid transparent; border-bottom: 13px solid transparent; margin-left: 6px; }
+.vcard .cap { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 20px; }
+.vcard .cap b { display: block; margin-top: 6px; font-family: var(--display); font-weight: 400; font-size: var(--d-stat-sm); line-height: 1; text-transform: uppercase; }
+.vcard:hover img, .vcard:focus-visible img { transform: scale(1.04); }
+.vcard:focus-visible { outline: 2px solid var(--cream); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .vcard img { transition: none; } }
+
+/* Steps */
+.steps .sub { margin-top: 20px; opacity: var(--muted); font-size: var(--t-lead); }
+.flow { margin-top: var(--after-h2); display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: var(--rule) solid var(--line-light); }
+.flow > div { padding: 26px 18px 0 0; }
+.flow > div + div { padding-left: 18px; border-left: var(--rule) solid var(--line-light); }
+.flow b { display: block; font-family: var(--display); font-weight: 400; font-size: var(--d-index); line-height: .8; opacity: .3; }
+.flow h5 { margin: 18px 0 8px; font-size: var(--t-h5); line-height: 1.25; }
+.flow p { font-size: var(--t-small); }
+
+/* Also */
+.also .list { margin-top: var(--after-h2); }
+.also .list > div { display: flex; justify-content: space-between; gap: 20px; text-align: left; }
+.also .list > div span:last-child { opacity: var(--muted); white-space: nowrap; }
+
+/* Why */
+.why .cols { margin-top: var(--after-h2); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(32px, 6vw, 90px); }
+.why .cols > div { padding: 28px 0; border-top: var(--rule) solid var(--line-light); }
+.why h5 { font-size: var(--t-h5); line-height: 1.25; margin-bottom: 8px; }
+
+/* Contacts */
+.c { margin-top: var(--after-h2); display: flex; flex-wrap: wrap; gap: 32px clamp(40px, 8vw, 120px); }
+.c small { display: block; margin-bottom: 8px; opacity: var(--muted); }
+.c .val { font-size: clamp(22px, 2.4vw, 34px); user-select: all; overflow-wrap: anywhere; }
+.copy { margin-top: 12px; background: none; color: inherit; font-family: inherit; cursor: pointer; }
+footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; opacity: var(--muted); border-top: var(--rule) solid var(--line-dark); }
+
+@media (max-width: 900px) {
+  .about, .tasks, .case { grid-template-columns: minmax(0, 1fr); }
+  .frame { max-width: 460px; }
+  .nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .n:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+  .n:nth-child(even) { padding-left: 20px; border-left: var(--rule) solid var(--line-dark); }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow > div { padding: 22px 16px 22px 0; border-bottom: var(--rule) solid var(--line-light); }
+  .flow > div + div { border-left: 0; padding-left: 0; }
+  .flow > div:nth-child(even) { padding-left: 16px; border-left: var(--rule) solid var(--line-light); }
+  .why .cols { grid-template-columns: minmax(0, 1fr); }
+  .vgrid { grid-template-columns: minmax(0, 1fr); }
+  .vcard .play { top: 32%; width: 56px; height: 56px; }
+  .vcard .play::before { border-left-width: 15px; border-top-width: 9px; border-bottom-width: 9px; margin-left: 4px; }
+  .vcard .cap { left: 16px; right: 16px; bottom: 14px; }
+  nav .pill:nth-child(n+5) { display: none; }
+}
+@media (max-width: 480px) {
+  .nums { grid-template-columns: minmax(0, 1fr); }
+  .n:nth-child(even) { padding-left: 0; border-left: 0; }
+  .scale b { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="photo"></div><div class="tint"></div><div class="shade"></div>
+  <div class="hero-inner">
+  <nav aria-label="Разделы">
+    <a class="pill" href="#about">Обо мне</a>
+    <a class="pill" href="#numbers">Цифры</a>
+    <a class="pill" href="#tasks">Задачи</a>
+    <a class="pill" href="#cases">Кейсы</a>
+    <a class="pill" href="#video">Видео</a>
+    <a class="pill" href="#steps">Этапы работы</a>
+    <a class="pill" href="#why">Почему я</a>
+    <a class="pill" href="#contacts">Контакты</a>
+  </nav>
+  <div class="hero-mid">
+    <h1 class="display">Portfolio</h1>
+    <div class="row label"><span>Event project manager</span><span>Saratikyan Luana</span><span>Exhibitions &amp; forums</span></div>
+  </div>
+  <p class="lead">Выставки, конгрессы и деловые мероприятия федерального и международного уровня: от концепции до работы на площадке.</p>
+  <div class="cta">
+    <a class="btn" href="#contacts">Связаться</a>
+    <a class="pill" href="portfolio.pdf" target="_blank" rel="noopener">Портфолио в PDF</a>
+  </div>
+  </div>
+</header>
+
+<main>
+<section class="band light" id="about">
+  <div class="wrap about">
+    <div class="frame"><img src="img/portrait.jpg" alt="Луана Саратикян" width="500" height="500"></div>
+    <div>
+      <h2 class="display h2">Обо мне</h2>
+      <p>Меня зовут Луана Саратикян. Больше 5 лет я веду проекты выставок, конгрессов и форумов полного цикла: концепция, деловая программа, бюджет, подрядчики, застройка, работа на площадке и отчётность.</p>
+      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, топ-менеджментом компаний и иностранными делегациями. Английский — C1.</p>
+      <div class="orgs"><span class="pill">Фонд Росконгресс</span><span class="pill">Московский экспортный центр</span><span class="pill">Высшая школа бизнеса НИУ ВШЭ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="numbers">
+  <div class="wrap">
+    <h2 class="display h2">Цифры</h2>
+    <div class="nums">
+      <div class="n"><b>5+<small>лет</small></b><span>в организации выставок, конгрессов и деловых мероприятий</span></div>
+      <div class="n"><b>50 000+</b><span>участников на крупнейшем проекте — форуме «Путешествуй!»</span></div>
+      <div class="n"><b>80+<small>стран</small></b><span>участников Российской энергетической недели</span></div>
+      <div class="n"><b>24 000<small>м²</small></b><span>застройки на одном мероприятии</span></div>
+      <div class="n"><b>300+</b><span>подрядчиков в одном проекте</span></div>
+      <div class="n"><b>14+</b><span>иностранных министров на РЭН</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark-2" id="tasks">
+  <div class="wrap tasks">
+    <div>
+      <h2 class="display h2">Задачи</h2>
+      <p class="intro">Отвечаю за проект целиком: от идеи и сметы до последнего закрывающего документа. Держу в одном графике подрядчиков, площадку, спикеров и партнёров.</p>
+    </div>
+    <div class="list">
+      <div>Концепция и визуальная концепция</div>
+      <div>Деловая программа и спикеры</div>
+      <div>Смета, бюджет и оптимизация затрат</div>
+      <div>Тендеры и координация подрядчиков</div>
+      <div>Застройка и выставочные экспозиции</div>
+      <div>Работа на площадке</div>
+      <div>Отчётность и закрывающие документы</div>
+    </div>
+  </div>
+</section>
+
+<div id="cases">
+<section class="band light">
+  <div class="wrap cases-head"><h2 class="display h2">Кейсы</h2></div>
+  <article class="wrap case">
+    <div class="pics">
+      <img class="main" src="img/ren-cameras.jpg" alt="Панельная сессия РЭН" loading="lazy">
+      <img src="img/ren-expo.jpg" alt="Выставочная часть РЭН" loading="lazy">
+      <img src="img/ren-plenary.jpg" alt="Пленарный зал РЭН" loading="lazy">
+    </div>
+    <div>
+      <div class="case-num display" aria-hidden="true">01</div>
+      <div class="meta"><span class="year">2021–2023</span><span class="place">ЦВЗ «Манеж», Москва</span></div>
+      <h3 class="display">Российская энергетическая неделя</h3>
+      <div class="scale">
+        <div><b>2 500+</b><span>участников</span></div><div><b>80+</b><span>стран</span></div>
+        <div><b>14+</b><span>иностранных министров</span></div><div><b>200+</b><span>компаний</span></div>
+        <div><b>15 000+ м²</b><span>застройки</span></div><div><b>200+</b><span>подрядчиков</span></div>
+      </div>
+      <div class="role"><h4 class="label">Моя роль</h4><p>Концепция и визуальная концепция форума, участие в подготовке деловой программы, смета и оптимизация бюджета, работа с иностранными партнёрами и органами власти.</p></div>
+    </div>
+  </article>
+</section>
+
+<section class="band dark">
+  <article class="wrap case">
+    <div class="pics">
+      <img class="main" src="img/travel-stage.jpg" alt="Главная сцена форума «Путешествуй!»" loading="lazy">
+      <img src="img/travel-stands.jpg" alt="Региональные стенды на ВДНХ" loading="lazy">
+      <img src="img/travel-stage2.jpg" alt="Фестивальная площадка форума" loading="lazy">
+    </div>
+    <div>
+      <div class="case-num display" aria-hidden="true">02</div>
+      <div class="meta"><span class="year">2022–2024</span><span class="place">ВДНХ, Москва</span></div>
+      <h3 class="display">Форум «Путешествуй!»</h3>
+      <div class="scale">
+        <div><b>50 000+</b><span>участников</span></div><div><b>40</b><span>регионов, 8 федеральных округов</span></div>
+        <div><b>130+</b><span>деловых и фестивальных событий</span></div><div><b>200+</b><span>компаний</span></div>
+        <div><b>24 000 м²</b><span>застройки</span></div><div><b>300+</b><span>подрядчиков</span></div>
+      </div>
+      <div class="role"><h4 class="label">Моя роль</h4><p>Концепция форума, деловая и фестивальная программа, мерч и полиграфия, работа с рекламой и маркетингом, смета и отчётность.</p></div>
+    </div>
+  </article>
+</section>
+
+<section class="band light">
+  <article class="wrap case">
+    <div class="pics">
+      <img class="main" src="img/kif-plenary.jpg" alt="Пленарная сессия КИФ" loading="lazy">
+      <img src="img/kif-stand.jpg" alt="Экспозиция «Кавказ.РФ»" loading="lazy">
+      <img src="img/kif-signing.jpg" alt="Подписание соглашений на стенде" loading="lazy">
+    </div>
+    <div>
+      <div class="case-num display" aria-hidden="true">03</div>
+      <div class="meta"><span class="year">2023–2024</span><span class="place">Грозный, Минеральные Воды</span></div>
+      <h3 class="display">Кавказский инвестиционный форум</h3>
+      <div class="scale">
+        <div><b>2 000+</b><span>участников</span></div><div><b>30+</b><span>стран</span></div>
+        <div><b>60</b><span>деловых мероприятий</span></div><div><b>300+</b><span>экспертов</span></div>
+        <div><b>10 000 м²</b><span>застройки</span></div><div><b>100+</b><span>подрядчиков</span></div>
+      </div>
+      <div class="role"><h4 class="label">Моя роль</h4><p>Выездной проект в регионах: концепция, деловая программа, работа с главами регионов и федеральными министерствами, координация подрядчиков и застройки, бюджет.</p></div>
+    </div>
+  </article>
+</section>
+
+<section class="band dark">
+  <article class="wrap case">
+    <div class="pics">
+      <img class="main" src="img/labour-stand.jpg" alt="Стенд Краснодарского края" loading="lazy">
+    </div>
+    <div>
+      <div class="case-num display" aria-hidden="true">04</div>
+      <div class="meta"><span class="year">2023–2024</span><span class="place">«Сириус», Сочи</span></div>
+      <h3 class="display">Всероссийская неделя охраны труда</h3>
+      <div class="scale">
+        <div><b>5 000</b><span>участников</span></div><div><b>100+</b><span>мероприятий деловой программы</span></div>
+        <div><b>100+</b><span>компаний и организаций</span></div><div><b>10 000 м²</b><span>застройки</span></div>
+        <div><b>80+</b><span>подрядчиков</span></div><div><b>ФОИВ</b><span>представители федеральных министерств</span></div>
+      </div>
+      <div class="role"><h4 class="label">Моя роль</h4><p>Выставочная экспозиция и деловая программа, координация подрядчиков по застройке, смета, работа на площадке.</p></div>
+    </div>
+  </article>
+</section>
+</div>
+
+<section class="band dark-2" id="video">
+  <div class="wrap">
+    <h2 class="display h2">Видео</h2>
+    <div class="vgrid">
+      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239201" target="_blank" rel="noopener"><img src="img/ren-plenary.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 01 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
+      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239155" target="_blank" rel="noopener"><img src="img/ren-expo.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 02 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
+      <a class="vcard" href="https://vkvideo.ru/video-59212293_456239108" target="_blank" rel="noopener"><img src="img/ren-cameras.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 03 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
+      <a class="vcard" href="https://vkvideo.ru/video-205832044_456239188" target="_blank" rel="noopener"><img src="img/labour-stand.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 04 · VK Видео</span><b>Всероссийская неделя охраны труда</b></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band light steps" id="steps">
+  <div class="wrap">
+    <h2 class="display h2">Этапы работы</h2>
+    <p class="sub">Так выглядит полный цикл проекта, который я веду сама.</p>
+    <div class="flow">
+      <div><b>01</b><h5>Концепция</h5><p>Цели, аудитория, формат, визуальная концепция, деловая программа.</p></div>
+      <div><b>02</b><h5>Роадмэп и бюджет</h5><p>Ключевые этапы и сроки, смета, риски, согласование со стейкхолдерами.</p></div>
+      <div><b>03</b><h5>Подрядчики</h5><p>ТЗ, тендеры, договоры, контроль сроков и качества работ.</p></div>
+      <div><b>04</b><h5>Застройка и логистика</h5><p>Экспозиции, стенды, оборудование, монтаж на площадке.</p></div>
+      <div><b>05</b><h5>Площадка</h5><p>Работа в дни мероприятия, спикеры, VIP-гости, быстрые решения.</p></div>
+      <div><b>06</b><h5>Отчётность</h5><p>Закрывающие документы, отчёт по проекту, выводы для следующего.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap also">
+    <h2 class="display h2">Также в портфолио</h2>
+    <div class="list">
+      <div><span>25-й Мировой энергетический конгресс</span><span>2021</span></div>
+      <div><span>91st FICC International Rally</span><span>2022</span></div>
+      <div><span>Московский предпринимательский форум</span><span>2023</span></div>
+      <div><span>Отраслевой и Тематический Дни энергетики на выставке «Россия»</span><span>2024</span></div>
+      <div><span>Мероприятия и брендбук программ MBA, ВШЭ</span><span>2024–2026</span></div>
+      <div><span>Экспозиции и деловые мероприятия МЭЦ</span><span>2026</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band light why" id="why">
+  <div class="wrap">
+    <h2 class="display h2">Почему я</h2>
+    <div class="cols">
+      <div><h5>Масштаб</h5><p>Вела проекты на 50 000 участников и 300 подрядчиков. Знаю, как не потерять контроль, когда всё происходит одновременно.</p></div>
+      <div><h5>Выставочный формат</h5><p>Экспозиции, стенды и показы на площадках от Манежа до ВДНХ и «Сириуса».</p></div>
+      <div><h5>Стейкхолдеры высокого уровня</h5><p>Министры, главы регионов, топ-менеджмент и иностранные делегации — привычная среда.</p></div>
+      <div><h5>Полный цикл</h5><p>От концепции и сметы до закрывающих документов. Английский C1 для международных проектов.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark contacts" id="contacts">
+  <div class="wrap">
+    <h2 class="display h2">Контакты</h2>
+    <div class="c">
+      <div><small class="label">Телефон · все мессенджеры</small><div class="val" id="phone">+7 (977) 542-46-96</div><button class="pill copy" type="button" data-copy="phone">Скопировать</button></div>
+      <div><small class="label">Почта</small><div class="val" id="mail">luana.saratikyan@mail.ru</div><button class="pill copy" type="button" data-copy="mail">Скопировать</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="label"><span>Саратикян Луана · Event project manager</span><a href="#top">Наверх</a></footer>
+
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var el = document.getElementById(b.dataset.copy);
+    var done = function () { b.textContent = "Скопировано"; setTimeout(function () { b.textContent = "Скопировать"; }, 1800); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if (navigator.clipboard) { navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); } else { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
