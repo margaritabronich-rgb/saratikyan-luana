@@ -126,7 +126,7 @@ nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
 .vcard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,7,11,.2), rgba(43,7,11,.92)); }
 .vcard .play { position: absolute; z-index: 1; top: 42%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border: var(--rule) solid var(--cream); border-radius: 50%; display: grid; place-items: center; }
 .vcard .play::before { content: ""; border-left: 22px solid var(--cream); border-top: 13px solid transparent; border-bottom: 13px solid transparent; margin-left: 6px; }
-.vcard .cap { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 20px; }
+.vcard .cap { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 20px; min-height: calc(2 * var(--d-stat-sm) + 28px); }
 .vcard .cap b { display: block; margin-top: 6px; font-family: var(--display); font-weight: 400; font-size: var(--d-stat-sm); line-height: 1; text-transform: uppercase; }
 .vcard:hover img, .vcard:focus-visible img { transform: scale(1.04); }
 .vcard:focus-visible { outline: 2px solid var(--cream); outline-offset: 4px; }
@@ -215,7 +215,7 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
     <div>
       <h2 class="display h2">Обо мне</h2>
       <p>Меня зовут Луана Саратикян. Больше 5 лет я веду проекты выставок, конгрессов и форумов полного цикла: концепция, деловая программа, бюджет, подрядчики, застройка, работа на площадке и отчётность.</p>
-      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, топ-менеджментом компаний и иностранными делегациями.</p>
+      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, <span style="white-space:nowrap">топ-менеджментом</span> компаний и иностранными делегациями.</p>
       <div class="label orgs-label">Организаторы и партнёры проектов</div>
       <div class="orgs"><span class="pill">Фонд Росконгресс</span><span class="pill">Минэнерго</span><span class="pill">Минтруд</span><span class="pill">Минэкономразвития</span></div>
     </div>
@@ -358,7 +358,7 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
       <a class="vcard" href="https://vkvideo.ru/video-59212293_456239201" target="_blank" rel="noopener"><img src="img/ren-plenary.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 01 · VK Видео</span><b>Российская энергетическая неделя</b></span></a>
       <a class="vcard" href="https://rutube.ru/video/f50392e5cf36cee867a8b3f5c7aaa318/" target="_blank" rel="noopener"><img src="img/travel-video.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 02 · Rutube</span><b>Форум «Путешествуй!»</b></span></a>
       <a class="vcard" href="https://vkvideo.ru/video-59212293_456239155" target="_blank" rel="noopener"><img src="img/kif-plenary.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 03 · VK Видео</span><b>Кавказский инвестиционный форум</b></span></a>
-      <a class="vcard" href="https://vkvideo.ru/video-205832044_456239188" target="_blank" rel="noopener"><img src="img/labour-video.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 04 · VK Видео</span><b>Всероссийская неделя охраны труда</b></span></a>
+      <a class="vcard" href="https://vkvideo.ru/video-205832044_456239188" target="_blank" rel="noopener"><img src="img/labour-video.jpg?v=2" alt="" loading="lazy"><span class="play" aria-hidden="true"></span><span class="cap"><span class="label">Видео 04 · VK Видео</span><b>Всероссийская неделя охраны труда</b></span></a>
     </div>
   </div>
 </section>
@@ -395,9 +395,9 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
     <h2 class="display h2">Почему я</h2>
     <div class="cols">
       <div><h5>Масштаб</h5><p>Опыт реализации проектов на 50 000+ участников и 300+ подрядчиков. Знаю, как не потерять контроль и принимать решения в условиях неопределённости.</p></div>
-      <div><h5>Выставочный формат</h5><p>Экспозиции, стенды и показы на площадках от Манежа до ВДНХ и «Сириуса».</p></div>
-      <div><h5>Стейкхолдеры высокого уровня</h5><p>Министры, главы регионов, топ-менеджмент и иностранные делегации — привычная среда.</p></div>
-      <div><h5>Полный цикл</h5><p>От концепции и сметы до закрывающих документов.</p></div>
+      <div><h5>Формат</h5><p>Деловая программа, протокольные мероприятия, молодёжный день, выставочные экспозиции на крупнейших площадках страны.</p></div>
+      <div><h5>Стейкхолдеры высокого уровня</h5><p>Опыт взаимодействия с министрами, главами регионов, <span style="white-space:nowrap">топ-менеджментом</span> крупных компаний и иностранными делегациями.</p></div>
+      <div><h5>Полный цикл</h5><p>От мастер-идеи, визуальной концепции и сметы до закрывающих документов.</p></div>
     </div>
   </div>
 </section>
