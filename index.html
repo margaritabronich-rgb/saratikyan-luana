@@ -77,7 +77,8 @@ nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
 .frame { position: relative; padding: 14% 0 0 16%; }
 .frame::before { content: ""; position: absolute; left: 0; top: 0; width: 74%; height: 74%; background: var(--wine); }
 .frame img { position: relative; width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: center 20%; }
-.about .h2 { margin-bottom: var(--after-h2); }
+.about .h2 { margin-bottom: 20px; }
+.about-name { font-size: var(--t-h5); font-weight: 700; margin-bottom: 16px; }
 .about p { max-width: 62ch; font-size: var(--t-lead); }
 .about p + p { margin-top: 16px; }
 .orgs-label { margin-top: 32px; opacity: var(--muted); }
@@ -214,8 +215,10 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
     <div class="frame"><img src="img/portrait.jpg" alt="Луана Саратикян" width="500" height="500"></div>
     <div>
       <h2 class="display h2">Обо мне</h2>
-      <p>Меня зовут Луана Саратикян. Больше 5 лет я веду проекты выставок, конгрессов и форумов полного цикла: концепция, деловая программа, бюджет, подрядчики, застройка, работа на площадке и отчётность.</p>
-      <p>Работаю со стейкхолдерами высокого уровня: министрами, главами регионов, <span style="white-space:nowrap">топ-менеджментом</span> компаний и иностранными делегациями.</p>
+      <p class="about-name">Луана Саратикян</p>
+      <p>5+ лет опыта в организации и проведении масштабных форумов, конгрессов и выставок полного цикла: создание мастер-идеи, визуальной концепции, деловой программы, side-events, составление бюджета, подбор подрядчиков, застройка площадок и пр.</p>
+      <p>Реализую проекты любого масштаба.</p>
+      <p>Опыт работы со стейкхолдерами высокого уровня: министрами, главами регионов, <span style="white-space:nowrap">топ-менеджментом</span> компаний и иностранными делегациями.</p>
       <div class="label orgs-label">Организаторы и партнёры проектов</div>
       <div class="orgs"><span class="pill">Фонд Росконгресс</span><span class="pill">Минэнерго</span><span class="pill">Минтруд</span><span class="pill">Минэкономразвития</span></div>
     </div>
