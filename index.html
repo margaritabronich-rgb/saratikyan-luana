@@ -74,7 +74,7 @@ nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
 
 /* About */
 .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 110px); align-items: center; }
-.frame { position: relative; padding: 14% 0 0 16%; }
+.frame { position: relative; padding: 14% 0 0 16%; width: 70%; justify-self: center; }
 .frame::before { content: ""; position: absolute; left: 0; top: 0; width: 74%; height: 74%; background: var(--wine); }
 .frame img { position: relative; width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: center 20%; }
 .about .h2 { margin-bottom: 20px; }
@@ -161,7 +161,7 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
 
 @media (max-width: 900px) {
   .about, .tasks, .case { grid-template-columns: minmax(0, 1fr); }
-  .frame { max-width: 460px; }
+  .frame { max-width: 322px; justify-self: start; }
   .nums { grid-template-columns: minmax(0, 1fr); }
   .n:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
   .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -212,12 +212,11 @@ footer { padding-inline: var(--gutter); padding-block: 24px; display: flex; flex
 <main>
 <section class="band light" id="about">
   <div class="wrap about">
-    <div class="frame"><img src="img/portrait.jpg" alt="Луана Саратикян" width="500" height="500"></div>
+    <div class="frame"><img src="img/portrait.jpg?v=2" alt="Луана Саратикян" width="500" height="500"></div>
     <div>
       <h2 class="display h2">Обо мне</h2>
       <p class="about-name">Луана Саратикян</p>
-      <p>5+ лет опыта в организации и проведении масштабных форумов, конгрессов и выставок полного цикла: создание мастер-идеи, визуальной концепции, деловой программы, side-events, составление бюджета, подбор подрядчиков, застройка площадок и пр.</p>
-      <p>Реализую проекты любого масштаба.</p>
+      <p>5+ лет опыта в организации и проведении масштабных форумов, конгрессов и выставок полного цикла: создание мастер-идеи, визуальной концепции, деловой программы, side-events, составление бюджета, подбор подрядчиков, застройка площадок и пр. Реализую проекты любого масштаба.</p>
       <p>Опыт работы со стейкхолдерами высокого уровня: министрами, главами регионов, <span style="white-space:nowrap">топ-менеджментом</span> компаний и иностранными делегациями.</p>
       <div class="label orgs-label">Организаторы и партнёры проектов</div>
       <div class="orgs"><span class="pill">Фонд Росконгресс</span><span class="pill">Минэнерго</span><span class="pill">Минтруд</span><span class="pill">Минэкономразвития</span></div>
